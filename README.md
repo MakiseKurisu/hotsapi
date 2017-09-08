@@ -1,0 +1,2 @@
+# hotsapi
+Python API

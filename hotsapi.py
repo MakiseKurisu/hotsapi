@@ -23,13 +23,13 @@ class hotsapi:
 
     def upload_replay(self, file):
         file = {"file": open(file, "rb")}
-        r = requests.post("http://hotsapi.net/api/v1/replays", files = file)
+        r = requests.post("http://hotsapi.net/api/v1/replays/", files = file)
         return self.return_json(r)
 
     def get_hero_list(self):
-        r = requests.get("https://api.hotslogs.com/Public/Data/Heroes")
+        r = requests.get("http://hotsapi.net/api/v1/heroes/translations")
         return self.return_json(r)
 
     def get_map_list(self):
-        r = requests.get("https://api.hotslogs.com/Public/Data/Maps")
+        r = requests.get("http://hotsapi.net/api/v1/maps/translations")
         return self.return_json(r)

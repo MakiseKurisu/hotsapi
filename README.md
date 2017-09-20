@@ -14,6 +14,7 @@ hotsapi.get_hero_list() and hotsapi.get_map_list() use [HotsLogs](https://www.ho
     class hotsapi:
         status_code
         get_replay_list(start_date = None, end_date = None, game_map = None, game_type = None, player = None, min_id = None)
+		get_paged_replay_list(page = None, start_date = None, end_date = None, game_map = None, game_type = None, player = None, min_id = None)
         get_replay(id)
         upload_replay(file)
         get_hero_list()

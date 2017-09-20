@@ -16,6 +16,11 @@ class hotsapi:
         payload = {'start_date': start_date, 'end_date': end_date, 'game_map': game_map, 'game_type': game_type, 'player': player, 'min_id': min_id}
         r = requests.get("https://hotsapi.net/api/v1/replays/", params = payload)
         return self.return_json(r)
+    
+    def get_paged_replay_list(self, page = None, start_date = None, end_date = None, game_map = None, game_type = None, player = None, min_id = None):
+        payload = {'page': page, 'start_date': start_date, 'end_date': end_date, 'game_map': game_map, 'game_type': game_type, 'player': player, 'min_id': min_id}
+        r = requests.get("https://hotsapi.net/api/v1/replays/paged", params = payload)
+        return self.return_json(r)
 
     def get_replay(self, id):
         r = requests.get("https://hotsapi.net/api/v1/replays/" + str(id))
